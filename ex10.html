@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Object</h1>
+    <h2>create</h2>
+    <script>
+      var coworkers = {
+        "programmer":"egoing",
+        "designer":"clark",
+        // "data scientist":"geo"
+      };
+      document.write('programmer: '+coworkers.programmer+'<br>');
+      document.write('designer: '+coworkers.designer+'<br>');
+      coworkers.bookkeeper="seo";
+      document.write('bookkeeper: '+coworkers.bookkeeper+'<br>');
+      coworkers["data scientist"]="geo";
+      document.write('data scientist: '+coworkers["data scientist"]+'<br>');
+    </script>
+    <h2>Iterate</h2>
+    <script>
+      for(var key in coworkers){
+        document.write(key+': '+coworkers[key]+'<br>');
+      }
+    </script>
+    <h2>Property & Method</h2>
+    <script>
+    // method를 이용하여 object 내에 있는 특정 타입의 element 출력하기
+      coworkers.showAll = function(type){
+        for(var key in this){
+          if (typeof(this[key])===type) {
+            document.write(key+': '+this[key]+'<br>');
+          }
+          else{
+          }
+        }
+      }
+      coworkers.showAll('function');
+      // Object 내 element 개수 세는 방법
+      document.write(Object.keys(coworkers).length);
+    </script>
+  </body>
+</html>
